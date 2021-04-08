@@ -1,0 +1,20 @@
+@startuml Sequence
+
+participant "DEC" as Emetteur  order 110
+participant "Mère" as Demandeur  order 120
+database "Registre distribué" as RegistreD  order 130
+
+     
+    Emetteur   -->  Demandeur  :  Notifie les parents d’Alice qu’ils peuvent faire la demande de l’attestation numérique d’identité 
+    Emetteur   <--  Demandeur  :  Demande l’attestation numérique d’identité 
+    Emetteur   -->  Demandeur  :  Demande les preuves  
+    Emetteur   -->  Demandeur  :  Émettre l'attestation ANIG 
+    Emetteur   -->  RegistreD  :  Émettre le schéma d'attestation numérique d'identité
+    Emetteur   <--  Demandeur  :  Demande l’attestation numérique d’identité pour Alice
+    Emetteur   -->  Demandeur  :  Demande les preuves 
+    Emetteur   <--  Demandeur  :  Présentation des informations demandées dans la requete
+    Emetteur   -->  RegistreD  :  Validation de l'autenticité des informations
+    Emetteur   -->  Demandeur  :  Émettre l'attestation ANIG d'Alice
+
+    
+@enduml

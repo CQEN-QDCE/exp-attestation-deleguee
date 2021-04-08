@@ -1,0 +1,15 @@
+@startuml Sequence
+
+participant "Guichet unique" as Emetteur  order 110
+participant "Mère" as Demandeur  order 120
+database "Registre distribué" as RegistreD  order 130
+
+      
+    Emetteur   <--  Demandeur  :  Demande une place au CPE   
+    Emetteur   -->  Demandeur  :  Demande l'attestation ANIG d'Alice
+    Emetteur   <--  Demandeur  :  Présentation des informations demandées dans la requete
+    Emetteur   -->  RegistreD  :  Validation de l'autenticité des informations
+    Emetteur   -->  Demandeur  :  Confirmation d'inscription d'Alice sur la liste d'attente 
+
+    
+@enduml

@@ -1,0 +1,6 @@
+{
+    "lblInscription": "Inscription nouveau élève", 
+    "btnIdentityRequest" : "Demander l'identité numérique de l'enfant", 
+    "msgInscriptionSuccess": "Inscription à garderie terminée.", 
+    "msgInscriptionSuccessCompl" : "L'enfant a été bien inscrit dans la garderie!"
+}

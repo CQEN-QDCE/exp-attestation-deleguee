@@ -1,0 +1,87 @@
+#/*
+#* Copyright (c) 2020 Gouvernement du Québec
+#* Auteur: Julio Cesar Torres (torj01)
+#* SPDX-License-Identifier: LiLiQ-R-v.1.1
+#* License-Filename: /LICENSE
+#*/
+##############################################################
+# Requetes http pour l'émeteur d'attestations d'identité 
+##############################################################
+### Définition des variables globales
+
+@hostname = http://dec-agent-admin.apps.exp.lab.pocquebec.org
+
+####
+#### Get list de connections 
+#### 
+GET {{hostname}}/connections HTTP/1.1
+X-API-Key: secret
+Content-Type: application/json
+
+####
+#### Creer un schema d'identité INQ
+####
+POST {{hostname}}/schemas HTTP/1.1
+X-API-Key: secret
+Content-Type: application/json
+
+{
+  "schema_name": "IQNIDENTITE",
+  "schema_version": "0.1.8",
+  "attributes": [
+    "holder.id", 
+    "holder.type", 
+    "issuanceDate",
+    "expirationDate", 
+    "credentialSubject.id",
+    "credentialSubject.firstNames",
+    "credentialSubject.lastName",
+    "credentialSubject.gender",
+    "credentialSubject.birthplace",
+    "credentialSubject.birthDate",
+    "credentialSubject.fatherFullName",
+    "credentialSubject.motherFullName",
+    "credentialSubject.registrationNumber", 
+    "credentialSubject.photo"
+  ]
+}
+
+####
+#### Crée la définition d'une attestation (CRED_DEF) de l'identité
+####
+POST {{hostname}}/credential-definitions HTTP/1.1
+Content-Type: application/json
+X-API-Key: secret
+
+{
+  "support_revocation": false,
+  "tag": "Identite-IQN",
+  "schema_id": "Ep31SvFAetugFPe5CGzJxt:2:IQNIDENTITE:0.1.8"
+}
+
+### "credential_definition_id": "Ep31SvFAetugFPe5CGzJxt:3:CL:1653:Identite-IQN"
+### "credential_definition_id": "Ep31SvFAetugFPe5CGzJxt:3:CL:1660:Identite-IQN"
+### "credential_definition_id": "Ep31SvFAetugFPe5CGzJxt:3:CL:1662:Identite-IQN"
+### "credential_definition_id": "Ep31SvFAetugFPe5CGzJxt:3:CL:1664:Identite-IQN"
+####
+#### Recupère les schemas crées par ce participant
+####
+GET {{hostname}}/schemas/created HTTP/1.1
+X-API-Key: secret
+Content-Type: : application/json"
+
+####
+#### Recupère un schema selon son {schema_id}
+####
+@schema_id = "V4SGRU86Z58d6TV7PBUe6f:2:DEC_CERT_NAISSANCE:0.01"
+GET {{hostname}}/schemas/{{schema_id}} HTTP/1.1
+X-API-Key: secret
+Content-Type: : application/json"
+
+####
+#### Recupère une attestation selon son {cred_def}
+####
+@cred_def = V4SGRU86Z58d6TV7PBUe6f:3:CL:1527:vpx29pm43
+GET {{hostname}}/credential/{{cred_def}} HTTP/1.1
+X-API-Key: secret
+Content-Type: : application/json"
