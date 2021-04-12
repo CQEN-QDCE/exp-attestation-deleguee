@@ -100,7 +100,7 @@ régler les contraintes et particularités d\'un cas d\'affaires concret.
 # 3.0 Environnement d\'expérimentation
 
 L\'environnement d\'expérimentation peut être créé et reproduit en suivant la
-documentation se retrouvant sur ce lien [procédure d\'installation](README_install.md). Elle permet l/'installation et l/'exécution de l\'expérimentation.
+documentation se retrouvant sur ce lien [procédure d\'installation](openshift/templates/README.md). Elle permet l/'installation et l/'exécution de l\'expérimentation.
 
 ## 3.1 Conditions initiales et prémisses
 

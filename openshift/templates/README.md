@@ -1,6 +1,4 @@
-[<--- Retour](README.md)
-
-# Demo 1 - Attestation déléguée
+# Attestation déléguée
 
 L'environnement d'expérimentation du CQEN est basé sur AWS & OpenShift (OKD).
 
@@ -30,7 +28,7 @@ Si vous souhaitez changer le nom des organismes utilisés dans la démo, vous po
 
 Pour que l'agent de communication puisse émettre des attestations, il est nécessaire de créer un DID public sur votre chaîne de bloc ou réutiliser celui de la démo '000000000000DirecteurEtatCivilQc'. Si vous avez installé un [VON-Network](https://github.com/bcgov/von-network) de la Province de la Colombie Britannique et que vous avez configurer l'explorateur de bloc, vous pouvez utiliser son interface graphique pour créer un DID public. Si vous utilisez une autre chaîne de bloc que la votre, vous devrez utiliser les outils fournis pour le faire.
 
-![Explorateur de bloc](images/NewDID.png)
+![Explorateur de bloc](../../images/NewDID.png)
 
 ---
 
@@ -181,5 +179,3 @@ Certains ajustements supplémentaires sont nécessaires après le premier déplo
 13. Sauvegarder;
 
 14. Effectuer les mêmes ajustements pour le 'mfa-agent' et le 'mfa-controller';
-
-[<--- Retour](README.md)
