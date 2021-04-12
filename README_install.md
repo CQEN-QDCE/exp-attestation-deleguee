@@ -126,13 +126,13 @@ oc process -f openshift/templates/mfa-template.yml | oc apply -f -
 ### Créer le schéma.
 > **_NOTE:_** Changer l'url de l'agent selon votre installation. Les valeurs "schema_name" et "schema_version" peuvent être modifiées selon vos besoins.
 ```bash
-curl -X POST "http://dec-agent-admin.apps.exp.lab.pocquebec.org/schemas" -H "accept: application/json" -H "X-Api-Key: " -H "Content-Type: application/json-patch+json" -d "{\"schema_name\": \"IQNIDENTITE\",\"schema_version\":\"1.0\",\"attributes\":[\"holder.id\",\"holder.type\",\"issuanceDate\",\"expirationDate\",\"credentialSubject.id\",\"credentialSubject.firstNames\",\"credentialSubject.lastName\",\"credentialSubject.gender\",\"credentialSubject.birthplace\",\"credentialSubject.birthDate\",\"credentialSubject.fatherFullName\",\"credentialSubject.motherFullName\",\"credentialSubject.registrationNumber\",\"credentialSubject.photo\"]}"
+curl -i -X POST "http://dec-agent-admin.apps.exp.lab.pocquebec.org/schemas" -H "accept: application/json" -H "X-Api-Key: " -H "Content-Type: application/json-patch+json" -d "{\"schema_name\": \"IQNIDENTITE\",\"schema_version\":\"1.0\",\"attributes\":[\"holder.id\",\"holder.type\",\"issuanceDate\",\"expirationDate\",\"credentialSubject.id\",\"credentialSubject.firstNames\",\"credentialSubject.lastName\",\"credentialSubject.gender\",\"credentialSubject.birthplace\",\"credentialSubject.birthDate\",\"credentialSubject.fatherFullName\",\"credentialSubject.motherFullName\",\"credentialSubject.registrationNumber\",\"credentialSubject.photo\"]}"
 ```
 
 ### Créer la définition de l'attestation.
 > **_NOTE:_** La valeur "schema_id" doit être remplacée par celle obtenue à la sortie de l'étape précédente.
 ```bash
-curl -X POST "http://dec-agent-admin.apps.exp.lab.pocquebec.org/credential-definitions" -H "accept: application/json" -H "X-Api-Key: test" -H "Content-Type: application/json-patch+json" -d "{\"support_revocation\": false,\"tag\": \"vc-authn-oidc\",\"schema_id\": "Ep31SvFAetugFPe5CGzJxt:2:IQNIDENTITE:1.0"}"
+curl -i -X POST "http://dec-agent-admin.apps.exp.lab.pocquebec.org/credential-definitions" -H "accept: application/json" -H "X-Api-Key: " -H "Content-Type: application/json-patch+json" -d "{\"support_revocation\": false,\"tag\": \"Identite-IQN\",\"schema_id\": "Ep31SvFAetugFPe5CGzJxt:2:IQNIDENTITE:1.0"}"
 ```
 > **_NOTE:_** Conserver la valeur "credential_definition_id"
 
