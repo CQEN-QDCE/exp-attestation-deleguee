@@ -134,14 +134,14 @@ Quelques médias d'image standards ont été crées et déposées dans le réper
 # 4.0 Démarche
 
 <p align="center">
-  <img src="images/Demarche1.png" label="Émission d'une attestation dont le sujet n'est pas le détenteur" />
+  <img src="images/FluxGardEtape1.png" label="Émission d'une attestation dont le sujet n'est pas le détenteur" />
 
   <br>
   <b>Diagramme de séquence - Émission d'attestation</b>
 </p>
 
 <p align="center">
-  <img src="images/Demarche2.png" label="Émission d'une attestation dont le sujet n'est pas le détenteur" />
+  <img src="images/FluxGardEtape2.png" label="Émission d'une attestation dont le sujet n'est pas le détenteur" />
 
   <br>
   <b>Diagramme de séquence - Vérification d'attestation</b>
@@ -440,7 +440,7 @@ et les performances des infrastructures. Le diagramme de séquence de
 l\'expérimentation devrait donc être le suivant :
 
 <p align="center">
-  <img src="images/AttestationTransaction1.png" label="Émission d'une attestation d'on le sujet n'est pas le détenteur" />
+  <img src="images/FluxGardEtapeFull.png" label="Émission d'une attestation d'on le sujet n'est pas le détenteur" />
   
   <br>
   <b>Diagramme de séquence de l'expérimentation</b>

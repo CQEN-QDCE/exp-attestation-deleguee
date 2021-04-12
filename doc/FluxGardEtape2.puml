@@ -1,15 +1,19 @@
 @startuml Sequence
 
-participant "Guichet unique" as Emetteur  order 110
-participant "Mère" as Demandeur  order 120
+actor "Mère" as Demandeur  order 100
+participant "MFA - Guichet unique" as Emetteur  order 110
 database "Registre distribué" as RegistreD  order 130
 
-      
+== Vérification d'une attestation dont le sujet n'est pas le détenteur  ==
+     
+' Inscrire son enfant pour une place en garderie
+group "Inscrire son enfant pour une place en garderie"
     Emetteur   <--  Demandeur  :  Demande une place au CPE   
-    Emetteur   -->  Demandeur  :  Demande l'attestation ANIG d'Alice
+    Emetteur   -->  Demandeur  :  Demande l'attestation d'identité d'Alice (requête de présentation)
     Emetteur   <--  Demandeur  :  Présentation des informations demandées dans la requete
     Emetteur   -->  RegistreD  :  Validation de l'autenticité des informations
+    Emetteur   -->  Emetteur   :  Vérification des règles d'affaires
     Emetteur   -->  Demandeur  :  Confirmation d'inscription d'Alice sur la liste d'attente 
+end
 
-    
 @enduml
