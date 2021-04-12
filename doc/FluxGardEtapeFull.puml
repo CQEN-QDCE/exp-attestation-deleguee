@@ -2,6 +2,7 @@
 
 actor "Mère" as Demandeur  order 100
 participant "DEC" as Emetteur  order 110
+participant "MFA - Guichet unique" as Emetteur2  order 120
 database "Registre distribué" as RegistreD  order 130
 
 == Émission d'une attestation dont le sujet n'est pas le détenteur  ==
@@ -23,5 +24,17 @@ group "Émettre l'identité d'Alice à la mère"
     Demandeur  -->  RegistreD  :  Validation de l'autenticité des informations
     Emetteur   -->  Demandeur  :  Émettre l'attestation d'identité numérique d'Alice à la mère
 end
-    
+
+== Vérification d'une attestation dont le sujet n'est pas le détenteur  ==
+     
+' Inscrire son enfant pour une place en garderie
+group "Inscrire son enfant pour une place en garderie"
+    Emetteur2   <--  Demandeur  :  Demande une place au CPE   
+    Emetteur2   -->  Demandeur  :  Demande l'attestation d'identité d'Alice (requête de présentation)
+    Emetteur2   <--  Demandeur  :  Présentation des informations demandées dans la requete
+    Emetteur2   -->  RegistreD  :  Validation de l'autenticité des informations
+    Emetteur2   -->  Emetteur2   :  Vérification des règles d'affaires
+    Emetteur2   -->  Demandeur  :  Confirmation d'inscription d'Alice sur la liste d'attente 
+end
+
 @enduml
