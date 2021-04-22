@@ -1,3 +1,7 @@
+[![img](https://img.shields.io/badge/Cycle%20de%20Vie-Phase%20d%C3%A9couverte-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques)
+[![License](https://img.shields.io/badge/Licence-LiLiQ--R-blue)](LICENSE)
+
+
 # Émettre une attestation d'identité dont le détenteur n'est pas le sujet, par un organisme qui connaît la relation 
 
 Voici les travaux réalisés dans le cadre d'une expérimentation basée sur le concept de l\'identité numérique. Le sujet: l\'émission d\'une attestation d\'identité à un représentant (détenteur) d'un individu représenté (sujet) par un organisme émetteur qui connait la relation entre ces individus.
