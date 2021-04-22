@@ -128,7 +128,7 @@ documentation se retrouvant sur ce lien [procédure d\'installation](openshift/t
   <img src="images/EnvironnementTest.png" label="Environnement de test" />
 
   <br>
-  <b>Shéma des composants utilisés pour réaliser l'expérimentation</b>
+  <b>Schéma des composants utilisés pour réaliser l'expérimentation</b>
 </p>
 
 ## 3.2 Médias standard disponibles 
