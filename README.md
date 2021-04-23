@@ -39,6 +39,7 @@ Voici les travaux réalisés dans le cadre d'une expérimentation basée sur le 
 
 8. [Conclusion](#80-conclusion)
 
+9. [Licence](#90-licence)
 ---
 
 ## 1.0 Objectifs
@@ -525,3 +526,5 @@ compliquer la vie du citoyen.
 
 [^1]:
     
+## 9.0 Licence
+Distribué sous Licence Libre du Québec – Réciprocité (LiLiQ-R). Voir [LICENCE](LICENSE) pour plus d'informations.
