@@ -328,12 +328,12 @@ Dans un modèle simple de contrôle indirect de l\'identité, c\'est la
 relation _détenteur -- sujet_ qui permet ultimement à un individu de
 « posséder » une attestation traitant d\'un autre individu.
 
-### 7.3 Personne autonome
+## 7.3 Personne autonome
 
 Dans le cas d\'une personne autonome, la relation est simple le détenteur
 est le sujet de l\'attestation.
 
-#### 7.3.1 Le détenteur parental
+### 7.3.1 Le détenteur parental
 
 L\'hypothèse émise est que si le détenteur est le sujet, il n\'est
 pas nécessaire de spécifier le champ *holder* : la relation est
@@ -341,12 +341,12 @@ implicitement définie. Après expérimentation, il semble que le champ
 _holder_ ne peut être omis : ses valeurs peuvent être fixées à "null", 
 en utilisant un espace blanc.
 
-### 7.4 Autorité parentale
+## 7.4 Autorité parentale
 
 Dans le cas de l\'autorité parentale, la relation est encore simple : le
 détenteur est le parent et sujet de l\'attestation est l\'enfant.
 
-#### 7.4.1 Le detenteur parental
+### 7.4.1 Le detenteur parental
 
 Ce cas de figure est représenté dans l\'expérimentation par l\'émission
 d\'une attestation d\'identité à la mère d\'Alice. Le schéma du
@@ -386,7 +386,7 @@ qui veut son bien et un autre consommateur pourrait s\'intéresser aux
 aspects _père_ et _biologique_ pour valider la pertinence ou non de
 faire un test d\'ADN.
 
-#### 7.4.2 Le sujet
+### 7.4.2 Le sujet
 
 Le sujet est représenté dans l\'attestation par un DID :
 
@@ -402,7 +402,7 @@ lui générer un DID. L\'utilisation d\'un portefeuille numérique pouvant
 gérer plusieurs identités est une avenue potentielle qui permettrait à
 un parent de générer ce DID initial.
 
-#### 7.4.3 L\'échéance
+### 7.4.3 L\'échéance
 
 La date d\'échéance est une valeur arbitraire fixée lors de l\'émission.
 Elle relève des règles d\'affaires de l\'émetteur. Par exemple, dans le
@@ -424,14 +424,14 @@ disponibles. Il serait judicieux de fournir aux consommateurs certains
 _validateurs_ standardisés pour faciliter leur tâche. Cet aspect ne relève 
 pas de la présente expérimentation.
 
-#### 7.4.4 Le statut de révocation
+### 7.4.4 Le statut de révocation
 
 Le statut de l\'attestation, par exemple si elle est révoquée ou non, doit faire
 partie du processus de vérification du consommateur. C\'est l\'émetteur de
 l\'attestation qui décide si l\'attestation est révoquée ou non selon ses
 propres règles d\'affaires.
 
-### 7.5 Attestations et transactions
+## 7.5 Attestations et transactions
 
 Même si ce n\'était pas l'objet de l'expérimentation, il est important de mentionner qu\'elle
 nous a permis de prendre conscience d\'un un aspect fondamental de la
