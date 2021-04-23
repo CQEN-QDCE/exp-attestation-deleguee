@@ -41,13 +41,13 @@ Voici les travaux réalisés dans le cadre d'une expérimentation basée sur le 
 
 ---
 
-# 1.0 Objectifs
+## 1.0 Objectifs
 
 - Explorer les concepts techniques permettant de soutenir la relation détenteur-sujet d\'une attestation.
 
 - Évaluer des modèles permettant de soutenir la relation parent-enfant(représentant/individu représenté ou détenteur/sujet) pour l\'attestation d\'identité gouvernementale lorsque l\'émetteur connait la relation.
 
-# 2.0 Contexte
+## 2.0 Contexte
 
 Le contrôle indirect de l\'identité, soit l'émission d'une attestion d'un
 sujet à son représentant, est complexe. Un cas d\'utilisation
@@ -101,12 +101,12 @@ régler les contraintes et particularités d\'un cas d\'affaires concret.
 13. Le guichet accepte la demande et inscrit la jeune Alice sur la liste
     d\'attente;
 
-# 3.0 Environnement d\'expérimentation
+## 3.0 Environnement d\'expérimentation
 
 L\'environnement d\'expérimentation peut être créé et reproduit en suivant la
 documentation se retrouvant sur ce lien [procédure d\'installation](openshift/templates/README.md). Elle permet l/'installation et l/'exécution de l\'expérimentation.
 
-## 3.1 Conditions initiales et prémisses
+### 3.1 Conditions initiales et prémisses
 
 - Un (1) portefeuille numérique appartenant à la mère est disponible, 
 - sur lequel son attestation d'identité est déjà disponible;
@@ -131,11 +131,11 @@ documentation se retrouvant sur ce lien [procédure d\'installation](openshift/t
   <b>Schéma des composants utilisés pour réaliser l'expérimentation</b>
 </p>
 
-## 3.2 Médias standard disponibles 
+### 3.2 Médias standard disponibles 
 
 Quelques médias d'image standards ont été crées et déposées dans le répertoire [d'Avatars](./images/Avatar). Ces images peuvent être utilisées dans les formulaires d'entrée de données de la PES d'émission d'attestation. 
 
-# 4.0 Démarche
+## 4.0 Démarche
 
 <p align="center">
   <img src="images/FluxGardEtape1.png" label="Émission d'une attestation dont le sujet n'est pas le détenteur" />
@@ -224,7 +224,7 @@ Autre exemple, l\'identité de l\'enfant émise à la mère en tant que détentr
 
 <b>Tableau 2 - Données de l\'attestation d\'identité de l'enfant</b>
 
-# 6.0 Résultats attendus
+## 6.0 Résultats attendus
 
 Le schéma d\'attestation d'identité numérique se retrouve sur la chaîne de blocs. Elle est la structure d'information qui doit permettre:
 
@@ -279,9 +279,9 @@ La vérification permet de valider :
 
 ---
 
-# 7.0 Analyse
+## 7.0 Analyse
 
-## 7.1 Échanges avec la Colombie-Britannique
+### 7.1 Échanges avec la Colombie-Britannique
 
 La relation représentant la cellule familiale n\'est pas la plus facile à
 gérer. Elle est, bien entendu, régie par des aspects juridiques. Ces
@@ -322,18 +322,18 @@ considère qu\'il faut garder le modèle à sa plus simple expression afin
 de représenter les relations familiales. On doit y représenter le
 détenteur et le sujet le plus simplement possible. 
 
-## 7.2 Expérimentations
+### 7.2 Expérimentations
 
 Dans un modèle simple de contrôle indirect de l\'identité, c\'est la
 relation _détenteur -- sujet_ qui permet ultimement à un individu de
 « posséder » une attestation traitant d\'un autre individu.
 
-## 7.3 Personne autonome
+### 7.3 Personne autonome
 
 Dans le cas d\'une personne autonome, la relation est simple le détenteur
 est le sujet de l\'attestation.
 
-### 7.3.1 Le détenteur parental
+#### 7.3.1 Le détenteur parental
 
 L\'hypothèse émise est que si le détenteur est le sujet, il n\'est
 pas nécessaire de spécifier le champ *holder* : la relation est
@@ -341,12 +341,12 @@ implicitement définie. Après expérimentation, il semble que le champ
 _holder_ ne peut être omis : ses valeurs peuvent être fixées à "null", 
 en utilisant un espace blanc.
 
-## 7.4 Autorité parentale
+### 7.4 Autorité parentale
 
 Dans le cas de l\'autorité parentale, la relation est encore simple : le
 détenteur est le parent et sujet de l\'attestation est l\'enfant.
 
-### 7.4.1 Le detenteur parental
+#### 7.4.1 Le detenteur parental
 
 Ce cas de figure est représenté dans l\'expérimentation par l\'émission
 d\'une attestation d\'identité à la mère d\'Alice. Le schéma du
@@ -386,7 +386,7 @@ qui veut son bien et un autre consommateur pourrait s\'intéresser aux
 aspects _père_ et _biologique_ pour valider la pertinence ou non de
 faire un test d\'ADN.
 
-### 7.4.2 Le sujet
+#### 7.4.2 Le sujet
 
 Le sujet est représenté dans l\'attestation par un DID :
 
@@ -402,7 +402,7 @@ lui générer un DID. L\'utilisation d\'un portefeuille numérique pouvant
 gérer plusieurs identités est une avenue potentielle qui permettrait à
 un parent de générer ce DID initial.
 
-### 7.4.3 L\'échéance
+#### 7.4.3 L\'échéance
 
 La date d\'échéance est une valeur arbitraire fixée lors de l\'émission.
 Elle relève des règles d\'affaires de l\'émetteur. Par exemple, dans le
@@ -424,14 +424,14 @@ disponibles. Il serait judicieux de fournir aux consommateurs certains
 _validateurs_ standardisés pour faciliter leur tâche. Cet aspect ne relève 
 pas de la présente expérimentation.
 
-### 7.4.4 Le statut de révocation
+#### 7.4.4 Le statut de révocation
 
 Le statut de l\'attestation, par exemple si elle est révoquée ou non, doit faire
 partie du processus de vérification du consommateur. C\'est l\'émetteur de
 l\'attestation qui décide si l\'attestation est révoquée ou non selon ses
 propres règles d\'affaires.
 
-## 7.5 Attestations et transactions
+### 7.5 Attestations et transactions
 
 Même si ce n\'était pas l'objet de l'expérimentation, il est important de mentionner qu\'elle
 nous a permis de prendre conscience d\'un un aspect fondamental de la
@@ -450,7 +450,7 @@ l\'expérimentation devrait donc être le suivant :
   <b>Diagramme de séquence de l'expérimentation</b>
 </p>
 
-# 8.0 Conclusion
+## 8.0 Conclusion
 
 L\'expérimentation a permis d\'explorer les concepts soutenant la
 relation _sujet-détenteur_ dans une attestation. La prémisse étant que
