@@ -31,7 +31,7 @@ Voici les travaux réalisés dans le cadre d'une expérimentation basée sur le 
    3. [Personne autonome](#73-personne-autonome)
       1. [Le détenteur](#731-le-détenteur)
    4. [Autorité parentale](#74-autorité-parentale)
-      1. [Le détenteur parental](#741-le-detenteur-parental)
+      1. [Le détenteur parental](#741-le-détenteur-parental)
       2. [Le sujet](#742-le-sujet)
       3. [L\'échéance](#743-léchéance)
       4. [Le statut de révocation](#744-le-statut-de-révocation)
@@ -351,7 +351,7 @@ relation _détenteur -- sujet_ qui permet ultimement à un individu de
 Dans le cas d\'une personne autonome, la relation est simple le détenteur
 est le sujet de l\'attestation.
 
-#### 7.3.1 Le détenteur parental
+#### 7.3.1 Le détenteur
 
 L\'hypothèse émise est que si le détenteur est le sujet, il n\'est
 pas nécessaire de spécifier le champ *holder* : la relation est
@@ -364,7 +364,7 @@ en utilisant un espace blanc.
 Dans le cas de l\'autorité parentale, la relation est encore simple : le
 détenteur est le parent et sujet de l\'attestation est l\'enfant.
 
-#### 7.4.1 Le detenteur parental
+#### 7.4.1 Le détenteur parental
 
 Ce cas de figure est représenté dans l\'expérimentation par l\'émission
 d\'une attestation d\'identité à la mère d\'Alice. Le schéma du
