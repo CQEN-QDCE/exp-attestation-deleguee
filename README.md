@@ -212,7 +212,7 @@ Par exemple, l\'identité de la mère émise pour elle-même en tant que détent
 |credentialSubject.fatherFullName | Mathieu Courcy |
 |credentialSubject.motherFullName | Marie Courcy |
 |credentialSubject.registrationNumber | 2aaf7216-1bf0 |
-|credentialSubject.photo | Data de la photo |
+|credentialSubject.photo | Données de la photo |
 
 ---
 
