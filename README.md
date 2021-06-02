@@ -151,7 +151,7 @@ Voir les instructions de [déploiment sur OpenShift](openshift/templates/README.
 
 ### 3.2 Médias standard disponibles 
 
-Quelques médias d'image standards ont été crées et déposées dans le répertoire [d'Avatars](./images/Avatar). Ces images peuvent être utilisées dans les formulaires d'entrée de données de la PES d'émission d'attestation. 
+Quelques médias d'image standards ont été crées et déposées dans le répertoire [Avatar](./images/Avatar). Ces images peuvent être utilisées dans les formulaires d'entrée de données de la PES d'émission d'attestation. 
 
 ## 4.0 Démarche
 
