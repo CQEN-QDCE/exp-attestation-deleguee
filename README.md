@@ -453,7 +453,7 @@ propres règles d\'affaires.
 
 Même si ce n\'était pas l'objet de l'expérimentation, il est important de mentionner qu\'elle
 nous a permis de prendre conscience d\'un un aspect fondamental de la
-chaîne de blocs de type Hyperledger-Indy. En effet, contrairement à l\'hypothèse
+chaîne de blocs de type [Hyperledger-Indy](https://www.hyperledger.org/use/hyperledger-indy). En effet, contrairement à l\'hypothèse
 initiale, il n\'y a aucun enregistrement dans la chaine de blocs
 d\'une transaction lors de l\'émission de l\'attestation. Les seuls
 enregistrements dans la chaîne de blocs se font lors de l\'ajout d\'un schéma
