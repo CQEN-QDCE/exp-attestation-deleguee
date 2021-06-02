@@ -50,7 +50,7 @@ Voici les travaux réalisés dans le cadre d'une expérimentation basée sur le 
 
 ## 2.0 Contexte
 
-Le contrôle indirect de l\'identité, soit l'émission d'une attestion d'un
+Le [contrôle indirect de l\'identité](https://github.com/hyperledger/aries-rfcs/tree/master/concepts/0103-indirect-identity-control), soit l'émission d'une attestion d'un
 sujet à son représentant, est complexe. Un cas d\'utilisation
 minimal a été élaboré afin de permettre la mise en place de toutes les
 composantes nécessaires pour expérimenter le concept sans toutefois
@@ -342,7 +342,7 @@ détenteur et le sujet le plus simplement possible.
 
 ### 7.2 Expérimentations
 
-Dans un modèle simple de contrôle indirect de l\'identité, c\'est la
+Dans un modèle simple de [contrôle indirect de l\'identité](https://github.com/hyperledger/aries-rfcs/tree/master/concepts/0103-indirect-identity-control), c\'est la
 relation _détenteur -- sujet_ qui permet ultimement à un individu de
 « posséder » une attestation traitant d\'un autre individu.
 
