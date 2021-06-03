@@ -129,8 +129,7 @@ Voir les instructions de [déploiment sur OpenShift](openshift/templates/README.
 - Un (1) portefeuille numérique appartenant à la mère est disponible, 
 - sur lequel son attestation d'identité est déjà disponible;
 
-- Un répertoire distribué identitaire se conformant au _framework_
-  _ARIES_ est en place et permet d\'émettre des attestations ainsi que les schémas associés;
+- Un répertoire distribué identitaire se conformant au [cadre de développement ARIES](https://github.com/hyperledger/aries) est en place et permet d\'émettre des attestations ainsi que les schémas associés;
 
 - Un émetteur d\'attestations représentant le DEC est en place;
 
