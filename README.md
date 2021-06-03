@@ -20,7 +20,7 @@ Voici les travaux réalisés dans le cadre d'une expérimentation basée sur le 
 
 4. [Démarche](#40-démarche)
 
-5. [Le contenu de l'Attestation](#50-le-contenu-de-lattestation)
+5. [Le contenu de l'attestation](#50-le-contenu-de-lattestation)
 
 6. [Résultats attendus](#60-résultats-attendus)
 
@@ -168,7 +168,7 @@ Quelques médias d'image standards ont été crées et déposées dans le réper
   <b>Diagramme de séquence - Vérification d'attestation</b>
 </p>
 
-## 5.0 Le contenu de l'Attestation
+## 5.0 Le contenu de l'attestation
 
 Voici le schéma de données utilisé pour l\'attestation d\'identité numérique ainsi que pour sa délégation:
 
