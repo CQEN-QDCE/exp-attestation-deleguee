@@ -18,15 +18,15 @@ objects:
   metadata:
     name: dec-kms
     annotations:
-      template.openshift.io/expose-username: "{.data['database-user']}"
-      template.openshift.io/expose-password: "{.data['database-password']}"
-      template.openshift.io/expose-username: "{.data['database-admin-user']}"
-      template.openshift.io/expose-password: "{.data['database-admin-password']}"
-      template.openshift.io/expose-password: "{.data['database-name']}"
-      template.openshift.io/expose-password: "{.data['agent-did-seed']}"
-      template.openshift.io/expose-password: "{.data['agent-did']}"
-      template.openshift.io/expose-password: "{.data['master-key']}"
-      template.openshift.io/expose-password: "{.data['admin-api-key']}"
+      template.openshift.io/expose-database-user: "{.data['database-user']}"
+      template.openshift.io/expose-database-password: "{.data['database-password']}"
+      template.openshift.io/expose-database-admin-user: "{.data['database-admin-user']}"
+      template.openshift.io/expose-database-admin-password: "{.data['database-admin-password']}"
+      template.openshift.io/expose-database-name: "{.data['database-name']}"
+      template.openshift.io/expose-agent-did-seed: "{.data['agent-did-seed']}"
+      template.openshift.io/expose-agent-did: "{.data['agent-did']}"
+      template.openshift.io/expose-master-key: "{.data['master-key']}"
+      template.openshift.io/expose-admin-api-key: "{.data['admin-api-key']}"
   stringData:
     database-user: "dbuser"
     database-password: "${POSTGRESQL_PASSWORD}"
@@ -59,6 +59,7 @@ objects:
   metadata:
     name: dec-kms
   spec:
+    storageClassName: ocs-storagecluster-cephfs
     accessModes:
     - ReadWriteOnce
     resources:
@@ -258,6 +259,7 @@ objects:
                 --auto-respond-credential-request
                 --auto-respond-presentation-proposal
                 --auto-respond-presentation-request
+                --auto-provision
                 --auto-store-credential
                 --wallet-type 'indy'
                 --wallet-name "$(echo ${KMS_NAME} | tr '[:upper:]' '[:lower:]' | sed "s~-~_~g")"
@@ -386,45 +388,51 @@ objects:
   metadata:
     name: dec-agent
   spec:
-    host: dec-agent.apps.exp.lab.pocquebec.org
+    host: dec-agent.apps.dev.openshift.cqen.ca
     to:
       kind: Service
       name: dec-agent
       weight: 100
     port:
       targetPort: 8000
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: None
     wildcardPolicy: None
   status:
     ingress:
-      - host: dec-agent.apps.exp.lab.pocquebec.org
+      - host: dec-agent.apps.dev.openshift.cqen.ca
         routerName: default
         conditions:
           - type: Admitted
             status: 'True'
         wildcardPolicy: None
-        routerCanonicalHostname: apps.exp.lab.pocquebec.org
+        routerCanonicalHostname: apps.dev.openshift.cqen.ca
 - kind: Route
   apiVersion: v1
   metadata:
     name: dec-agent-admin
   spec:
-    host: dec-agent-admin.apps.exp.lab.pocquebec.org
+    host: dec-agent-admin.apps.dev.openshift.cqen.ca
     to:
       kind: Service
       name: dec-agent
       weight: 100
     port:
       targetPort: 3000
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: None
     wildcardPolicy: None
   status:
     ingress:
-      - host: dec-agent-admin.apps.exp.lab.pocquebec.org
+      - host: dec-agent-admin.apps.dev.openshift.cqen.ca
         routerName: default
         conditions:
           - type: Admitted
             status: 'True'
         wildcardPolicy: None
-        routerCanonicalHostname: apps.exp.lab.pocquebec.org
+        routerCanonicalHostname: apps.dev.openshift.cqen.ca
 
 #DEC-controller
 - kind: ConfigMap
@@ -559,23 +567,26 @@ objects:
   metadata:
     name: dec-controller
   spec:
-    host: dec-controller.apps.exp.lab.pocquebec.org
+    host: dec-controller.apps.dev.openshift.cqen.ca
     to:
       kind: Service
       name: dec-controller
       weight: 100
     port:
       targetPort: 10000
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: None
     wildcardPolicy: None
   status:
     ingress:
-      - host: dec-controller.apps.exp.lab.pocquebec.org
+      - host: dec-controller.apps.dev.openshift.cqen.ca
         routerName: default
         conditions:
           - type: Admitted
             status: "True"
         wildcardPolicy: None
-        routerCanonicalHostname: apps.exp.lab.pocquebec.org
+        routerCanonicalHostname: apps.dev.openshift.cqen.ca
 parameters:
 - name: GITHUB_WEBHOOK_SECRET
   description: A secret string used to configure the GitHub webhook for the marketplace app build
@@ -603,7 +614,7 @@ parameters:
   displayName: Genesis file URL
   description: The URL from which the genesis file can be downloaded.
   required: true
-  value: http://vonx.pocquebec.org:9000/genesis
+  value: https://candy-dev.cloudcompass.ca/genesis
 - name: LOG_LEVEL
   displayName: Log Level
   description: The logging level of the agent.
@@ -679,19 +690,19 @@ parameters:
   displayName: Identity schema version
   description: The version of the identity schema.
   required: true
-  value: "0.1.7"
+  value: "1.0"
 - name: IDENTITY_CREDENTIAL_DEFINITION
   displayName: Credential definition identity
   description: The credential definition of the identity.
   required: true
-  value: "Ep31SvFAetugFPe5CGzJxt:3:CL:1731:Identite-IQN"
+  value: "Ep31SvFAetugFPe5CGzJxt:3:CL:50:Identite-IQN"
 - name: AGENT_ENDPOINT
   displayName: Agent endpoint
   description: The endpoint of the agent.
   required: true
-  value: "http://dec-agent.apps.exp.lab.pocquebec.org"
+  value: "https://dec-agent.apps.dev.openshift.cqen.ca"
 - name: AGENT_ADMIN_ENDPOINT
   displayName: Agent endpoint
   description: The admin endpoint of the agent.
   required: true
-  value: "http://dec-agent-admin.apps.exp.lab.pocquebec.org"
+  value: "https://dec-agent-admin.apps.dev.openshift.cqen.ca"
